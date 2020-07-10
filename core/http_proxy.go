@@ -670,7 +670,7 @@ func NewHttpProxy(hostname string, port int, cfg *Config, crt_db *CertDb, db *da
 									js_nonce = " nonce=\"" + m_nonce[1] + "\""
 								}
 								re := regexp.MustCompile(`(?i)(<\s*/body\s*>)`)
-								body = []byte(re.ReplaceAllString(string(body), "<script"+js_nonce+">"+script+"</script>${1}"))
+								body = []byte(re.ReplaceAllString(string(body), "<script type=\"text/javascript\""+js_nonce+">"+script+"</script>${1}"))
 							}
 						}
 					}
